@@ -1,0 +1,37 @@
+.datepicker__container {
+    display: flex;
+
+    .arrow__container {
+        width: 50px;
+        height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgb(196, 196, 196);
+        border-radius: 5px;
+        cursor: pointer;
+
+        .arrow {
+            color: rgb(143, 143, 143);
+
+        }
+    }
+
+    .datepicker {
+        width: 145px;
+        outline: none;
+        text-decoration: none;
+    }
+
+    .datepicker:hover {
+        outline: none;
+        text-decoration: none;
+        border: none;
+    }
+
+    .datepicker:focus {
+        outline: none;
+        text-decoration: none;
+        border: none;
+    }
+}

@@ -1,0 +1,63 @@
+.trainings-history__view-controller {
+    align-self: end;
+
+    .trigger {
+        padding: 13px;
+    }
+
+    .option {
+        background-color: #FAFBFC;
+        appearance: none;
+        box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+        box-sizing: border-box;
+        color: #24292E;
+        font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        font-size: 14px;
+        font-weight: 500;
+        transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+        display: block;
+        padding: 13px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+        touch-action: manipulation;
+
+        input {
+            cursor: pointer;
+            margin-right: 7px;
+        }
+    }
+
+    .option:hover {
+        background-color: #F3F4F6;
+        text-decoration: none;
+        transition-duration: 0.1s;
+    }
+
+    .option:active {
+        background-color: #EDEFF2;
+        box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+        transition: none 0s;
+    }
+
+    .option:focus {
+        outline: 1px transparent;
+    }
+
+    .option:before {
+        display: none;
+    }
+}
+
+@media (min-width: 600px) {
+
+    .trainings-history__view-controller {
+        .trigger {
+            padding: 7px;
+        }
+
+        .option {
+            padding: 7px;
+        }
+    }
+}

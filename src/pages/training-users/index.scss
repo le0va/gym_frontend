@@ -1,0 +1,10 @@
+.training-users__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.MuiTableCell-head {
+    width: calc(100% + 100px);
+    background-color: red;
+}

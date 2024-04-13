@@ -1,0 +1,40 @@
+.error-message__container,
+.success-message__container,
+.info-message__container {
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px;
+
+    p {
+        // font-family: "URWGroteskSCLig W03 Regular";
+        display: flex;
+        letter-spacing: 1px;
+        color: rgb(210, 77, 97);
+    }
+}
+
+.error-message__container {
+    background-color: rgb(252, 246, 246);
+    border: 2px solid rgb(210, 77, 97);
+
+    p {
+        color: rgb(210, 77, 97);
+    }
+}
+
+.success-message__container {
+    background-color: rgb(246, 252, 246);
+    border: 2px solid rgb(57, 182, 86);
+
+    p {
+        color: rgb(57, 182, 86);
+    }
+}
+
+.info-message__container {
+    border: 2px solid rgb(57, 130, 182);
+
+    p {
+        color: rgb(57, 130, 182);
+    }
+}

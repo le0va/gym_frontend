@@ -1,0 +1,23 @@
+.trainings-control__button {
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    padding: 13px;
+    box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
+    line-height: 1.5;
+}
+
+.training-control__start-button {
+    color: rgb(0, 140, 255);
+}
+
+.training-control__finish-button {
+    color: red;
+}
+
+@media (min-width: 600px) {
+
+    .trainings-control__button {
+        padding: 8px 12px;
+    }
+}
