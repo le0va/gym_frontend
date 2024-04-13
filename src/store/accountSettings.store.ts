@@ -43,11 +43,9 @@ class AccountSettingsStore implements IAccountSettingsStore {
     async fetchUserInfo(userId: number) {
         try {
             const { name, room } = await usersService.fetchUser(userId);
-            console.log('Name: ' + name + '; Room = ' + room);
             this.setName(name ?? '');
             this.setRoom(`${room ?? '0'}`);
             this.setIsUserNeedFillInfo(this.name !== '' && this.room !== '' ? false : true);
-            console.log('Is User need Fill info: ' + this.isUserNeedFillInfo);
         }
         catch (err: any) {
             setResponseError(err.message ?? '', this.setFormErr.bind(this), usersService.httpErrors);

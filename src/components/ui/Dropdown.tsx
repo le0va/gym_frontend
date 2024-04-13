@@ -35,7 +35,6 @@ const Dropdown = ({ trigger, children, className = '', onDropdownClick }: Dropdo
 
     const handleDropdownClick = (e: React.MouseEvent) => {
         if (onDropdownClick) {
-            console.log('Dropdown click: on Dropdown close');
             onDropdownClick(open, setOpen);
         }
     }

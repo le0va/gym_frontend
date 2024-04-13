@@ -21,7 +21,7 @@ const Header = () => {
                 </Link>
             </div>
             <Link to={'/account-settings'} className={location.pathname === '/account-settings' || location.pathname === '/login' ? 'account active' : 'account'}>
-                <AccountCircleIcon fontSize='large' onClick={(e) => console.log('click')} />
+                <AccountCircleIcon fontSize='large' />
             </Link>
         </header>
     )

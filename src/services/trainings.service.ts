@@ -25,8 +25,6 @@ class TrainingsService extends HttpService implements ITrainingsService {
         url += page !== undefined ? `page=${page}&` : '';
         url += take !== undefined ? `take=${take}&` : '';
 
-        console.log(url);
-        console.log('page: ' + page);
         return this.get(url);
     }
 }
