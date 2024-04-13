@@ -4,7 +4,7 @@ import { IGetConfig, IPostConfig, IPatchConfig } from "../types";
 class HttpService {
     baseUrl: string;
 
-    constructor(baseUrl = 'http://192.168.0.101:5000') {
+    constructor(baseUrl = 'http://212.224.107.149/:5000') {
         this.baseUrl = baseUrl;
     }
 
