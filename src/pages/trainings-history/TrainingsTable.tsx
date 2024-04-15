@@ -121,6 +121,7 @@ const TrainingsTable = ({ store }: TrainingsTableProps) => {
             showGlobalFilter: true
         },
         state: {
+            globalFilter: store.searchMRT,
             sorting: store.sortingMRT,
             pagination: {
                 pageIndex: store.paginationMRT.pageIndex,
