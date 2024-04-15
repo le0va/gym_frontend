@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     background-image: url('../../../public/stitch_watching.png');
-    background-size: 90%;
+    background-size: 80%;
     background-repeat: no-repeat;
     background-position: bottom;
 
@@ -16,7 +16,7 @@
         .form__container {
             width: 351px;
             border-radius: 8px;
-            padding: 20px;
+            padding: 0 20px 20px 20px;
 
             form {
 
@@ -55,6 +55,6 @@
 @media (min-width: 560px) {
 
     .account-settings__wrapper {
-        background-size: 500px;
+        background-size: 450px;
     }
 }
