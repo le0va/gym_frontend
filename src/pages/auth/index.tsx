@@ -15,6 +15,7 @@ const Auth = ({ service }: AuthProps) => {
 
     useEffect(() => {
         setError('');
+        console.log('Use state');
     })
 
     return (
