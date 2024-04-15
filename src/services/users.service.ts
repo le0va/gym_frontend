@@ -1,5 +1,5 @@
 import HttpService from "./http.service";
-import { ITrainingUser, IUser, IUserInfo, Role, UpdateUserDto } from "../types";
+import { ITrainingUser, IUser, Role, UpdateUserDto } from "../types";
 
 
 export interface IUsersService {

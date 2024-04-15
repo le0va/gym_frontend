@@ -1,5 +1,4 @@
 import { useLocation, Link } from "react-router-dom"
-import isUserAuthorized from "../utils/isUserAuthorized";
 
 interface ProtectedComponentProps {
     children: JSX.Element;

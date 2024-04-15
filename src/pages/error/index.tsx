@@ -15,7 +15,7 @@ const Error = () => {
             <p>
                 <i>{error?.statusText || error?.message}</i>
             </p>
-            <img src="./stitch_angry.png" className='stitch__img' />
+            <img src="./stitch_angry.png" className='stitch__img' alt='stitch-404'/>
             <Link to="/">
                 <Button className='back__button'>
                     <HomeIcon sx={{ marginRight: '4px', height: '20px' }} />
