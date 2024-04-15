@@ -18,7 +18,7 @@ const Auth = ({ service }: AuthProps) => {
             <div className="container">
                 {error && <Message type="error">{error}</Message>}
 
-                <img src="./stitch_circle.png" className="logo" alt="stitch-logo"/>
+                <img src="./logo192.jpg" className="logo" alt="stitch-logo"/>
                 <h1>Вхід до Gym14</h1>
                 <div className="content">
                     <p>Для зручності користувачів авторизація виконується за допомогою сервіса Google</p>

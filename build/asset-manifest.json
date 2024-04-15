@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.fc4ec772.css",
-    "main.js": "/static/js/main.d965b4eb.js",
-    "static/media/stitch_watching.png": "/static/media/stitch_watching.7c6991e501d7cefdb452.png",
+    "main.css": "/static/css/main.faa639af.css",
+    "main.js": "/static/js/main.8c14d7bd.js",
+    "static/media/stitch_watching.jpg": "/static/media/stitch_watching.28661faeb49b06acde1a.jpg",
     "index.html": "/index.html",
-    "main.fc4ec772.css.map": "/static/css/main.fc4ec772.css.map",
-    "main.d965b4eb.js.map": "/static/js/main.d965b4eb.js.map"
+    "main.faa639af.css.map": "/static/css/main.faa639af.css.map",
+    "main.8c14d7bd.js.map": "/static/js/main.8c14d7bd.js.map"
   },
   "entrypoints": [
-    "static/css/main.fc4ec772.css",
-    "static/js/main.d965b4eb.js"
+    "static/css/main.faa639af.css",
+    "static/js/main.8c14d7bd.js"
   ]
 }

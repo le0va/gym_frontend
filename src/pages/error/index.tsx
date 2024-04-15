@@ -3,7 +3,6 @@ import Button from '../../components/ui/Button';
 import HomeIcon from '@mui/icons-material/Home';
 import './index.scss';
 
-
 const Error = () => {
     const error: any = useRouteError();
 
@@ -15,7 +14,7 @@ const Error = () => {
             <p>
                 <i>{error?.statusText || error?.message}</i>
             </p>
-            <img src="./stitch_angry.png" className='stitch__img' alt='stitch-404'/>
+            <img src="./stitch_angry.jpg" className='stitch__img' alt='stitch-404'/>
             <Link to="/">
                 <Button className='back__button'>
                     <HomeIcon sx={{ marginRight: '4px', height: '20px' }} />
