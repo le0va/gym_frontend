@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import GoogleAuth from "./GoogleAuth";
 import Message from "../../components/ui/Message";
 import { IAuthService } from "../../services/auth.service";
@@ -12,11 +12,6 @@ interface AuthProps {
 
 const Auth = ({ service }: AuthProps) => {
     const [error, setError] = useState('');
-
-    // useEffect(() => {
-    //     setError('');
-    //     console.log('Use state');
-    // })
 
     return (
         <div className="auth__wrapper">
