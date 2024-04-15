@@ -13,10 +13,10 @@ interface AuthProps {
 const Auth = ({ service }: AuthProps) => {
     const [error, setError] = useState('');
 
-    useEffect(() => {
-        setError('');
-        console.log('Use state');
-    })
+    // useEffect(() => {
+    //     setError('');
+    //     console.log('Use state');
+    // })
 
     return (
         <div className="auth__wrapper">
