@@ -5,12 +5,14 @@ import {
     useMaterialReactTable,
     type MRT_ColumnDef,
     MRT_SortingState,
-    MRT_PaginationState
+    MRT_PaginationState,
+    MRT_GlobalFilterTextField
 } from 'material-react-table';
 import { MRT_Localization_UK } from 'material-react-table/locales/uk';
 import { Updater } from '@tanstack/table-core/build/lib/types';
 import { ITrainingsStore } from '../../store/trainings.store';
 import { ITrainingSession } from '../../types';
+import FilterSettings from './FilterSettings';
 
 
 interface TrainingsTableProps {
@@ -101,6 +103,26 @@ const TrainingsTable = ({ store }: TrainingsTableProps) => {
 
             }
         }),
+        muiTopToolbarProps: {
+            sx: {
+                overflow: 'visible'
+            }
+        },
+        renderTopToolbar: ({ table }) => (
+            <div
+                style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    padding: '8px 8px 0 8px'
+                }}
+            >
+                <MRT_GlobalFilterTextField table={table} />
+                <FilterSettings
+                    isTableOutputByDate={store.tableOutputByDate}
+                    setIsTableOutputByDate={store.setTableOutputByDate.bind(store)}
+                />
+            </div>
+        ),
         enableRowSelection: false,
         enableColumnOrdering: false,
         enableColumnActions: false,
@@ -111,11 +133,11 @@ const TrainingsTable = ({ store }: TrainingsTableProps) => {
         manualSorting: true,
         manualPagination: true,
         enableColumnFilters: false,
-        enableFilters: !tableOutputByDate,
-        enableGlobalFilter: !tableOutputByDate,
+        enableFilters: true,
+        enableGlobalFilter: true,
         enableSorting: !tableOutputByDate,
         enablePagination: !tableOutputByDate,
-        enableTopToolbar: !tableOutputByDate,
+        enableTopToolbar: true,
         enableBottomToolbar: !tableOutputByDate,
         initialState: {
             showGlobalFilter: true

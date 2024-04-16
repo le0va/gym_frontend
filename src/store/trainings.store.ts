@@ -66,7 +66,7 @@ class TrainingsStore implements ITrainingsStore {
     async fetchTrainings() {
         try {
             const options: IGetTrainingsOptions = {
-                search: !this.tableOutputByDate && this.searchMRT ? this.searchMRT : undefined,
+                search: this.searchMRT !== '' ? this.searchMRT : undefined,
                 date: this.tableOutputByDate ? this.filterDate : undefined,
                 page: this.tableOutputByDate ? 0 : this.paginationMRT.pageIndex,
                 take: this.tableOutputByDate ? 300 : this.paginationMRT.pageSize,

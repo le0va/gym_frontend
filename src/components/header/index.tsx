@@ -11,7 +11,7 @@ const Header = () => {
             <div className="tabs">
                 <Link to={'/training-users'}>
                     <button className={location.pathname === '/training-users' ? 'active' : ''}>
-                        Тренування
+                        Тренуються
                     </button>
                 </Link>
                 <Link to={'/trainings-history'}>

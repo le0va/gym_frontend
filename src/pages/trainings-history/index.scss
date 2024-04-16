@@ -12,14 +12,11 @@
             display: flex; 
             flex-direction: column;
             align-items: center;
+            margin-bottom: 15px;
         }
     }
 }
 
 .trainings-history__datepicker {
-    justify-self: center;
-}
-
-.trainings-history__view-controller {
-    align-self: end;
+    margin-bottom: 15px;
 }

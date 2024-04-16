@@ -7,7 +7,7 @@ interface DropdownProps {
     children: ReactElement;
     trigger: ReactElement;
     className?: string;
-    onDropdownClick?: (open: boolean, setOpen: React.Dispatch<React.SetStateAction<boolean>>) => void;
+    onDropdownClick?: (e: React.MouseEvent, isOpen: boolean, setIsOpen: React.Dispatch<React.SetStateAction<boolean>>) => void;
 }
 
 
@@ -35,7 +35,7 @@ const Dropdown = ({ trigger, children, className = '', onDropdownClick }: Dropdo
 
     const handleDropdownClick = (e: React.MouseEvent) => {
         if (onDropdownClick) {
-            onDropdownClick(open, setOpen);
+            onDropdownClick(e, open, setOpen);
         }
     }
 
