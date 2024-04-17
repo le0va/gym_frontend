@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.db741e08.css",
-    "main.js": "/static/js/main.5146215a.js",
+    "main.js": "/static/js/main.2bc316dd.js",
     "static/media/stitch_watching.jpg": "/static/media/stitch_watching.28661faeb49b06acde1a.jpg",
     "index.html": "/index.html",
     "main.db741e08.css.map": "/static/css/main.db741e08.css.map",
-    "main.5146215a.js.map": "/static/js/main.5146215a.js.map"
+    "main.2bc316dd.js.map": "/static/js/main.2bc316dd.js.map"
   },
   "entrypoints": [
     "static/css/main.db741e08.css",
-    "static/js/main.5146215a.js"
+    "static/js/main.2bc316dd.js"
   ]
 }
