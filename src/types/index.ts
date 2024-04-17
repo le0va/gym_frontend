@@ -9,35 +9,40 @@ export enum Role {
 }
 
 export enum OrderBy {
-    userName = 'userName',
+    hostel = 'hostel',
     room = 'room',
+    userName = 'userName',
     trainingStart = 'trainingStart',
     trainingEnd = 'trainingEnd'
 }
 
 export interface IUser {
     id: number;
-    name: string | null;
+    hostel: number | null;
     room: number | null;
+    name: string | null;
     roles: Role[];
     isUserTraining: boolean;
 }
 
 export interface ITrainingUser {
     id: number;
+    hostel: number;
     room: number;
     name: string;
     trainingStart: Date;
 }
 
 export interface IUserInfo {
+    hostel: number | null;
     room: number | null;
     name: string | null;
 }
 
 export interface UpdateUserDto {
-    name?: string;
+    hostel?: number;
     room?: number;
+    name?: string;
 }
 
 export interface ITrainingSession {
@@ -45,8 +50,9 @@ export interface ITrainingSession {
     start: Date;
     end: Date;
     user: {
-        name: string;
+        hostel: number;
         room: number;
+        name: string;
     }
 }
 
@@ -78,6 +84,7 @@ export interface IGoogleAuthResponse {
     accessToken: string;
     roles: Role[];
     isUserTraining: boolean;
+    hostel: number | null;
     room: number | null;
     name: string | null;
 }
