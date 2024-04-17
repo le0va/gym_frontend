@@ -15,8 +15,13 @@ const UsersTable = ({ data }: UsersTableProps) => {
     const columns = useMemo<MRT_ColumnDef<ITrainingUser>[]>(
         () => [
             {
+                header: 'Гурт.№',
+                accessorFn: (dataRow) => dataRow.hostel,
+                id: 'hostel'
+            },
+            {
                 header: 'Кім.№',
-                accessorFn: (dataRow) => dataRow.room === 0 ? '-' : dataRow.room,
+                accessorFn: (dataRow) => dataRow.room,
                 id: 'room'
             },
             {
