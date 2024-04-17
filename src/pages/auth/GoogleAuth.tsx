@@ -20,7 +20,7 @@ const GoogleAuth = ({ errorsList, setError, authenticateGoogle }: GoogleAuthProp
             const { id, accessToken, roles } = await authenticateGoogle(credentialResponse.credential ?? '');
             localStorage.setItem('userId', `${id}`);
             localStorage.setItem('accessToken', accessToken);
-            localStorage.setItem('roles', JSON.stringify(roles));
+            // localStorage.setItem('roles', JSON.stringify(roles));
 
             const redirectedFrom = location.state?.from;
             const isUser = roles.includes(Role.user);
