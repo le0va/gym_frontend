@@ -48,6 +48,16 @@ const Form = ({ store }: FormProps) => {
                             error={store.nameErr}
                             disabled={!isEditModeActive}
                         />
+                        <label htmlFor="hostel">
+                            Гуртожиток
+                        </label>
+                        <Input
+                            id="hostel"
+                            value={store.hostel}
+                            onChange={e => store.setHostel(e.target.value)}
+                            error={store.hostelErr}
+                            disabled={!isEditModeActive}
+                        />
                         <label htmlFor="room">
                             Кімната
                         </label>
