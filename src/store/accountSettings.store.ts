@@ -4,17 +4,21 @@ import setResponseError from "../utils/setResponseError";
 
 
 export interface IAccountSettingsStore {
-    name: string;
+    hostel: string;
     room: string;
-    nameErr: string;
+    name: string;
+    hostelErr: string;
     roomErr: string;
+    nameErr: string;
     formErr: string;
     isUpdateSuccess: boolean | null;
     isUserNeedFillInfo: boolean;
-    setName: (name: string) => void;
+    setHostel: (hostel: string) => void;
     setRoom: (room: string) => void;
-    setNameErr: (err: string) => void;
+    setName: (name: string) => void;
+    setHostelErr: (err: string) => void;
     setRoomErr: (err: string) => void;
+    setNameErr: (err: string) => void;
     setFormErr: (err: string) => void;
     setIsUpdateSuccess: (success: boolean | null) => void;
     setIsUserNeedFillInfo: (isUserNeedFillInfo: boolean) => void;
@@ -26,10 +30,12 @@ export interface IAccountSettingsStore {
 class AccountSettingsStore implements IAccountSettingsStore {
     private readonly usersService: IUsersService;
 
-    @observable name = '';
+    @observable hostel = '';
     @observable room = '';
-    @observable nameErr = '';
+    @observable name = '';
+    @observable hostelErr = '';
     @observable roomErr = '';
+    @observable nameErr = '';
     @observable formErr = '';
     @observable isUpdateSuccess: boolean | null = null;
     @observable isUserNeedFillInfo: boolean = false;
@@ -42,10 +48,11 @@ class AccountSettingsStore implements IAccountSettingsStore {
     @action
     async fetchUserInfo(userId: number) {
         try {
-            const { name, room } = await usersService.fetchUser(userId);
+            const { hostel, room, name } = await usersService.fetchUser(userId);
+            this.setHostel(`${hostel ?? ''}`);
+            this.setRoom(`${room ?? ''}`);
             this.setName(name ?? '');
-            this.setRoom(`${room ?? '0'}`);
-            this.setIsUserNeedFillInfo(this.name !== '' && this.room !== '' ? false : true);
+            this.setIsUserNeedFillInfo(this.hostel !== '' && this.room !== '' && this.name !== '' ? false : true);
         }
         catch (err: any) {
             setResponseError(err.message ?? '', this.setFormErr.bind(this), usersService.httpErrors);
@@ -55,16 +62,18 @@ class AccountSettingsStore implements IAccountSettingsStore {
     @action
     async updateUserInfo() {
         this.setIsUpdateSuccess(null);
+        const hostelErr = Number(this.hostel) >= 1 && Number(this.hostel) <= 22 ? '' : 'Номер гуртожитка має містити лише числа від 1 до 22';
+        const roomErr = /^\d{3}$/.test(this.room) ? '' : 'Номер кімнати має містити лише трьохзначні числа';
         const nameErr = /^[\u0410-\u044f\u0401\u0451\u0406\u0456\u0404\u0454'ʼ`]+$/.test(this.name) ? '' : 'Фамілія має містити лише кирилицю';
-        const roomErr = /^0$|^\d{3}$/.test(this.room) ? '' : 'Номер кімнати має містити лише трьохзначні числа, або 0 якщо ви проживаєте в іншому гуртожитку';
-        this.setNameErr(nameErr);
-        this.setRoomErr(roomErr);
 
-        if (!nameErr && !roomErr) {
+        this.setHostelErr(hostelErr);
+        this.setRoomErr(roomErr);
+        this.setNameErr(nameErr);
+
+        if (!hostelErr && !roomErr && !nameErr) {
             try {
-                const updateResult = await usersService.update({ name: this.name, room: Number(this.room) });
+                const updateResult = await usersService.update({ hostel: Number(this.hostel), room: Number(this.room), name: this.name });
                 localStorage.setItem('accessToken', updateResult.accessToken);
-                localStorage.setItem('roles', JSON.stringify(updateResult.roles));
                 this.setFormErr('');
                 this.setIsUserNeedFillInfo(false);
                 this.setIsUpdateSuccess(true);
@@ -77,20 +86,28 @@ class AccountSettingsStore implements IAccountSettingsStore {
     }
 
     @action
-    setName(name: string) {
-        this.name = name;
+    setHostel(hostel: string) {
+        this.hostel = hostel;
     }
     @action
     setRoom(room: string) {
         this.room = room;
     }
     @action
-    setNameErr(err: string) {
-        this.nameErr = err;
+    setName(name: string) {
+        this.name = name;
+    }
+    @action
+    setHostelErr(err: string) {
+        this.hostelErr = err;
     }
     @action
     setRoomErr(err: string) {
         this.roomErr = err;
+    }
+    @action
+    setNameErr(err: string) {
+        this.nameErr = err;
     }
     @action
     setFormErr(err: string) {
