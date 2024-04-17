@@ -94,7 +94,7 @@ const TrainingsTable = ({ store }: TrainingsTableProps) => {
                     xs: column.id === 'userName' ? '200px' : 'auto',
                 },
                 minWidth: '0px',
-                padding: column.id === 'room' ? '0px 5px 0px 25px' : '15px 10px',
+                padding: column.id === 'hostelRoom' ? '0px 5px 0px 25px' : '15px 10px',
 
             }
         }),
