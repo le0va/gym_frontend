@@ -44,26 +44,21 @@ const TrainingsTable = ({ store }: TrainingsTableProps) => {
     const columns = useMemo<MRT_ColumnDef<ITrainingSession>[]>(
         () => [
             {
-                header: 'Кім.№',
-                accessorFn: (dataRow) => dataRow.user?.room === 0 ? '-' : dataRow.user?.room,
-                id: 'room',
-                muiFilterTextFieldProps: {
-                    placeholder: 'Фільтр по кімнаті'
-                },
+                header: '№Гурт/Кім',
+                accessorFn: (dataRow) => `${dataRow.user?.hostel}) ${dataRow.user?.room}`,
+                id: 'hostelRoom',
+                enableSorting: false,
             },
             {
                 header: 'Імʼя',
                 accessorFn: (dataRow) => dataRow.user?.name,
                 id: 'userName',
-                muiFilterTextFieldProps: {
-                    placeholder: 'Фільтр по імені'
-                }
             },
             {
                 header: 'Початок',
                 accessorFn: (dataRow) => tableOutputByDate ?
                     `${dataRow.start.getHours() < 10 ? '0' : ''}${dataRow.start.getHours()}:${dataRow.start.getMinutes() < 10 ? '0' : ''}${dataRow.start.getMinutes()}` :
-                    `${dataRow.start.getDate() < 10 ? '0' : ''}${dataRow.start.getDate()}.${dataRow.start.getMonth() < 9 ? '0' : ''}${dataRow.start.getMonth() + 1}.${dataRow.start.getFullYear()} / ${dataRow.start.getHours() < 10 ? '0' : ''}${dataRow.start.getHours()}:${dataRow.start.getMinutes() < 10 ? '0' : ''}${dataRow.start.getMinutes()}`,
+                    `${dataRow.start.getDate() < 10 ? '0' : ''}${dataRow.start.getDate()}.${dataRow.start.getMonth() < 9 ? '0' : ''}${dataRow.start.getMonth() + 1}.${dataRow.start.getFullYear() % 100}р  ${dataRow.start.getHours() < 10 ? '0' : ''}${dataRow.start.getHours()}:${dataRow.start.getMinutes() < 10 ? '0' : ''}${dataRow.start.getMinutes()}`,
                 id: 'trainingStart'
             },
             {
