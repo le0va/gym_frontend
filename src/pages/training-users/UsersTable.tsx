@@ -15,14 +15,9 @@ const UsersTable = ({ data }: UsersTableProps) => {
     const columns = useMemo<MRT_ColumnDef<ITrainingUser>[]>(
         () => [
             {
-                header: 'Гурт.№',
-                accessorFn: (dataRow) => dataRow.hostel,
-                id: 'hostel'
-            },
-            {
-                header: 'Кім.№',
-                accessorFn: (dataRow) => dataRow.room,
-                id: 'room'
+                header: '№Гурт/Кім',
+                accessorFn: (dataRow) => `${dataRow.hostel}) ${dataRow.room}`,
+                id: 'hostelRoom'
             },
             {
                 header: 'Імʼя',
@@ -44,14 +39,14 @@ const UsersTable = ({ data }: UsersTableProps) => {
             sx: {
                 width: {
                     xs: column.id === 'userName' ? '265px' :
-                        column.id === 'trainingStart' ? '60px' : 'auto',
+                        column.id === 'trainingStart' ? '80px' : 'auto',
                     sm: '150px',
                     md: '150px',
                     lg: '150px',
                     xl: '150px'
                 },
                 minWidth: '0px',
-                padding: column.id === 'room' ? '0px 5px 0px 20px' : '15px 10px',
+                padding: column.id === 'hostelRoom' ? '0px 5px 0px 20px' : '15px 10px',
             }
         }),
         muiTableBodyCellProps: ({ column }) => ({
@@ -60,7 +55,7 @@ const UsersTable = ({ data }: UsersTableProps) => {
                     xs: column.id === 'userName' ? '280px' : 'auto',
                 },
                 minWidth: '0px',
-                padding: column.id === 'room' ? '0px 5px 0px 25px' : '15px 10px',
+                padding: column.id === 'hostelRoom' ? '0px 5px 0px 25px' : '15px 10px',
 
             }
         }),
