@@ -62,7 +62,7 @@ class AccountSettingsStore implements IAccountSettingsStore {
     @action
     async updateUserInfo() {
         this.setIsUpdateSuccess(null);
-        const hostelErr = Number(this.hostel) >= 1 && Number(this.hostel) <= 22 ? '' : 'Номер гуртожитка має містити лише числа від 1 до 22';
+        const hostelErr = Number(this.hostel) >= 1 && Number(this.hostel) <= 22 ? '' : 'Номер гуртожитка має містити число від 1 до 22';
         const roomErr = /^\d{3}$/.test(this.room) ? '' : 'Номер кімнати має містити лише трьохзначні числа';
         const nameErr = /^[\u0410-\u044f\u0401\u0451\u0406\u0456\u0404\u0454'ʼ`]+$/.test(this.name) ? '' : 'Фамілія має містити лише кирилицю';
 
