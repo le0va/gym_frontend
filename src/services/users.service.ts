@@ -8,7 +8,7 @@ export interface IUsersService {
     fetchTrainingUsers(): Promise<Array<ITrainingUser>>;
     startTraining(): Promise<Date>;
     finishTraining(): Promise<void>;
-    update(updateData: UpdateUserDto): Promise<{ accessToken: string, roles: Role[] }>;
+    update(updateData: UpdateUserDto): Promise<{ accessToken: string }>;
 }
 
 
@@ -18,7 +18,7 @@ class UsersService extends HttpService implements IUsersService {
         'Bad Request: The user already started training': 'Користувач вже почав тренування',
         'Bad Request: The user is currently not training': 'Користувач ще не починав тренування',
         'Unauthorized: Unauthorized': 'Помилка авторизації. Увійдіть в свій акаунт',
-        'Forbidden: Forbidden resource': 'Заповніть поля "Імʼя" і "Номер кімнати" на сторінці налаштувань акаунту щоб отримати доступ до керування тренуваннями',
+        'Forbidden: Forbidden resource': 'Заповніть поля "Імʼя", "Гуртожиток" і "Номер кімнати" на сторінці налаштувань акаунту щоб отримати доступ до керування тренуваннями',
         'Not Found: User with this id does not exist': 'Повторно увійдіть в свій акаунт на сторінці авторизації, користувача з заданим id не знайдено',
         'Too Many Requests: You can complete no more than 3 training sessions in the last hour': 'Забагато запитів. За одну годину можна починати максимум три тренування'
     };
@@ -39,7 +39,7 @@ class UsersService extends HttpService implements IUsersService {
         return this.patch('training/finish');
     }
 
-    update(updateData: UpdateUserDto): Promise<{ accessToken: string, roles: Role[] }> {
+    update(updateData: UpdateUserDto): Promise<{ accessToken: string }> {
         return this.patch('users', {
             headers: {
                 'Content-type': 'application/json'
