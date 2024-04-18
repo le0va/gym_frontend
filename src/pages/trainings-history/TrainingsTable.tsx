@@ -85,7 +85,7 @@ const TrainingsTable = ({ store }: TrainingsTableProps) => {
                     xl: '150px'
                 },
                 minWidth: '0px',
-                padding: column.id === 'room' ? '0px 5px 0px 20px' : '15px 10px',
+                padding: column.id === 'hostelRoom' ? '0px 5px 0px 20px' : '15px 10px',
             }
         }),
         muiTableBodyCellProps: ({ column }) => ({
